@@ -1,0 +1,13 @@
+h1,h5 {
+  text-align: center;
+  margin: 0px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
