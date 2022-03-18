@@ -1,13 +1,14 @@
-h1,h5 {
+.container {
   text-align: center;
-  margin: 0px;
 }
 
-ul li {
-  list-style-type: none;
+.header-message h1,p {
+  margin: 3px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 10px;
+.routes-links {
+}
+
+span {
+  display: block;
 }
