@@ -1,14 +1,21 @@
+.break {
+  margin-top: 10px;
+}
+
+
 .container {
   text-align: center;
 }
 
-.header-message h1,p {
-  margin: 3px;
+.user-data * {
+  margin-bottom: 5px;
 }
 
-.routes-links {
+.page-updates {
+  display: inline-block;
+  text-align: left;
 }
 
-span {
-  display: block;
+.page-status {
+  margin: 0px;
 }
