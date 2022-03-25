@@ -18,3 +18,7 @@ body {
 .page-status {
   margin: 0px;
 }
+
+.no-margin {
+  margin: 0px;
+}
