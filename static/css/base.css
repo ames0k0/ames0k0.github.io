@@ -10,13 +10,9 @@ body {
   text-align: center;
 }
 
-.page-updates {
+.text-left {
   display: inline-block;
   text-align: left;
-}
-
-.page-status {
-  margin: 0px;
 }
 
 .no-margin {
