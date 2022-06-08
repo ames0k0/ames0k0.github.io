@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Python Quiz: XOR operator</title>
+    <link rel="stylesheet" href="../../../static/css/base.css" />
+    <link rel="icon" type="image/png" href="../../../static/logo/favicon.ico">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="xor-table">
+        <img class="no-margin" src="static/1/python_quiz_xor.jpg">
+        <pre class="no-margin text-left">
+               XOR
+          +---+---+---+
+          | a | b | = |
+          +---+---+---+
+          | 0 | 0 | 0 |
+          +---+---+---+
+          | 0 | 1 | 1 |
+          +---+---+---+
+          | 1 | 0 | 1 |
+          +---+---+---+
+          | 1 | 1 | 0 |
+          +---+---+---+
+
+          xor_by = 2
+          a = bin(i)
+          b = bin(xor_by)
+          c = bin(i ^ xor_by)
+          d = int(c, base=2)
+
+          +---+-----+-----+-----+---+
+          | i |  a  |  b  |  c  | d |
+          +---+-----+-----+-----+---+
+          | 0 |   0 ^ 10  |  10 | 2 |
+          +---+-----------+-----+---+
+          | 1 |   1 ^ 10  |  11 | 3 |
+          +---+-----------+-----+---+
+          | 2 |  10 ^ 10  |   0 | 0 |
+          +---+-----------+-----+---+
+          | 3 |  11 ^ 10  |   1 | 1 |
+          +---+-----------+-----+---+
+          | 4 | 100 ^ 10  | 110 | 6 |
+          +---+-----------+-----+---+
+        </pre>
+      </div>
+    </div>
+  </body>
+
+</html>
