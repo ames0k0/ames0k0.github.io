@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Test code in the production</title>
+    <link rel="stylesheet" href="../../../static/css/base.css" />
+    <link rel="icon" type="image/png" href="../../../static/logo/favicon.ico">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="logical-operators">
+        <img class="no-margin" src="static/5/production.jpg">
+        <pre class="no-margin text-left">
+		commit ????????????????????????????????????????
+		Author: Nodaa Gaji <c0d3r.nodiru.gaji@gmail.com>
+		Date:   Sun Jun 11 21:40:58 2023 +0300
+
+		    Fix: remove test code
+
+		    Signed-off-by: Nodaa Gaji <c0d3r.nodiru.gaji@gmail.com>
+
+		diff --git a/src/interface/helper.py b/src/interface/helper.py
+		index a783081..d7546ae 100644
+		--- a/src/interface/helper.py
+		+++ b/src/interface/helper.py
+		@@ -47,7 +47,7 @@ class HelperInterface:
+			     cs_description: str, channels: list, callback_data: dict
+		     ) -> None:
+			 buttons = []
+		-        for cidx, channel in enumerate(channels * 10):
+		+        for cidx, channel in enumerate(channels, start=1):
+			     buttons.append(
+				 [InlineKeyboardButton(text=f"Канал: {cidx}", url=channel.invite_link)]
+			     )
+        </pre>
+      </div>
+    </div>
+  </body>
+
+</html>
