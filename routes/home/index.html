@@ -2,76 +2,96 @@
 
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <title>ames0k0's GP: Home</title>
-    <link rel="stylesheet" href="static/css/base.css" />
-    <style>
-      .user-data * {
-        margin-bottom: 5px;
-      }
-    </style>
-    <link rel="icon" type="image/png" href="static/logo/favicon.ico">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>ames0k0's GP: Home</title>
+  <link rel="stylesheet" href="static/css/base.css" />
+  <style>
+    .user-data * {
+      margin-bottom: 5px;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="static/logo/favicon.ico">
+</head>
 
-  <body>
-    <div class="container">
+<body>
+  <div class="container">
 
-      <div class="user-data">
-        <div class="username"><h1 class="break"><a href="routes/about/index.html">Nodaa Gaji</a></h1></div>
-        <div class="random-quote"><i>One flew east, One flew west, One flew Over the Cuckoo's Nest</i></div>
-        <div class="main-profile"><a href="https://sh1chan.herokuapp.com">#ames0k0 @ sh1chan</a></div>
-        <div class="profiles-link">
-          <a href="https://pypi.org/user/ames0k0">PyPI</a>
-          ::
-          <a href="https://www.youtube.com/@ames0k0">YouTube</a>
-        </div>
-        <div class="projects-link">
-          <a target="_blank" href="http://sh1chan.herokuapp.com">sh1chan</a>
-        </div>
+    <div class="user-data">
+      <div class="username">
+        <h1 class="break"><a href="routes/about/index.html">Nodaa Gaji</a></h1>
       </div>
-
-      <div class="routes break">
-        <a href="routes/projects/index.html">Projects</a>
+      <div class="random-quote"><i>One flew east, One flew west, One flew Over the Cuckoo's Nest</i></div>
+      <div class="main-profile"><a href="https://sh1chan.herokuapp.com">#ames0k0 @ sh1chan</a></div>
+      <div class="profiles-link">
+        <a href="https://pypi.org/user/ames0k0">PyPI</a>
         ::
-        <a href="routes/scripts/index.html">Scripts</a>
-        ::
-        <a href="routes/random/index.html">Random</a>
+        <a href="https://www.youtube.com/@ames0k0">YouTube</a>
       </div>
-
-      <div class="page-updates break text-left">
-        <p class="page-status no-margin">
-          <a href="routes/random/random/5.html"><strong>2023-06-11</strong></a>
-          Test code in the production
-        </p>
-        <p class="page-status no-margin">
-          <a href="routes/random/random/4.html"><strong>2023-05-06</strong></a>
-          BotNet ? (MumbleHard)
-        </p>
-        <p class="page-status no-margin">
-          <a href="routes/random/random/2.html"><strong>2022-07-20</strong></a>
-          Python Quiz: Logical operators with common objects
-        </p>
-        <p class="page-status no-margin">
-          <a href="routes/random/random/1.html"><strong>2022-06-05</strong></a>
-          Python Quiz: XOR operator
-        </p>
-        <p class="page-status no-margin">
-          <a href="routes/random/random/3.html"><strong>2021-10-03</strong></a>
-          Raspberry Pi 4: Booting an Operating System
-        </p>
+      <div class="projects-link">
+        <a target="_blank" href="http://sh1chan.herokuapp.com">sh1chan</a>
       </div>
-
-      <div class="page-posts-tags break">
-        <span>#Linux</span>
-        <span>#Networking</span>
-        <span>#Virtualization</span>
-        <span>#Cloud Computing</span>
-        <span>#Internet of Things</span>
-        <span>#Artificial Intelligence</span>
-      </div>
-
     </div>
-  </body>
+
+    <div class="routes break">
+      <a href="routes/projects/index.html">Projects</a>
+      ::
+      <a href="routes/scripts/index.html">Scripts</a>
+      ::
+      <a href="routes/random/index.html">Random</a>
+    </div>
+
+    <div class="break selectable-route">
+      <label for="selectClient">CLIENT</label>
+      <select name="selectClient">
+        <option value="clientAny">ANY</option>
+      </select>
+      <label for="selectAPIGateway">API GATEWAY</label>
+      <select name="selectAPIGateway">
+        <option value="apigatewayAny">ANY</option>
+      </select>
+      <label for="selectServer">SERVER</label>
+      <select name="selectServer">
+        <option value="serverAny">ANY</option>
+        <option value="serverWeb">WEB</option>
+        <option value="serverRest">REST</option>
+        <option value="serverGRPCc">gRPC</option>
+      </select>
+    </div>
+
+    <div class="page-updates break text-left">
+      <p class="page-status no-margin">
+        <a href="routes/random/random/5.html"><strong>2023-06-11</strong></a>
+        Test code in the production
+      </p>
+      <p class="page-status no-margin">
+        <a href="routes/random/random/4.html"><strong>2023-05-06</strong></a>
+        BotNet ? (MumbleHard)
+      </p>
+      <p class="page-status no-margin">
+        <a href="routes/random/random/2.html"><strong>2022-07-20</strong></a>
+        Python Quiz: Logical operators with common objects
+      </p>
+      <p class="page-status no-margin">
+        <a href="routes/random/random/1.html"><strong>2022-06-05</strong></a>
+        Python Quiz: XOR operator
+      </p>
+      <p class="page-status no-margin">
+        <a href="routes/random/random/3.html"><strong>2021-10-03</strong></a>
+        Raspberry Pi 4: Booting an Operating System
+      </p>
+    </div>
+
+    <div class="page-posts-tags break">
+      <span>#Linux</span>
+      <span>#Networking</span>
+      <span>#Virtualization</span>
+      <span>#Cloud Computing</span>
+      <span>#Internet of Things</span>
+      <span>#Artificial Intelligence</span>
+    </div>
+
+  </div>
+</body>
 
 </html>
