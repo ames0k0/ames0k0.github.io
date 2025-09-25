@@ -4,11 +4,102 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ames0k0's GP: Home</title>
-  <link rel="stylesheet" href="static/css/base.css" />
   <style>
-    .user-data * {
-      margin-bottom: 5px;
+    body {
+      background-color: #000;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+      margin: 0px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 0.9em;
+      margin: 0px;
+    }
+    .social {
+      text-align: center;
+      margin: 10px;
+    }
+    .social a {
+      color: #00ffcc;
+      text-decoration: underline;
+    }
+    a {
+      color: #00ffcc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 0px;
+      flex-wrap: wrap;
+    }
+    select {
+      background: #111;
+      color: #00ffcc;
+      border: 1px solid #444;
+      padding: 5px;
+      font-family: 'Courier New', monospace;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    .tag-cloud button {
+      background: #111;
+      color: #66ccff;
+      border: 1px solid #444;
+      padding: 5px 10px;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+    }
+    .tag-cloud button.selected {
+      background: #003333;
+      color: #00ffcc;
+      border-color: #00ffcc;
+      font-weight: bold;
+    }
+    .writeups {
+      list-style: none;
+      padding: 0;
+    }
+    .writeup {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #0a0a0a;
+      border-left: 3px solid #00ffcc;
+    }
+    .writeup-date {
+      color: #66ccff;
+      font-weight: bold;
+    }
+    .writeup-title {
+      margin: 0;
+      color: #00ffcc;
+    }
+    .tags {
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #66ccff;
     }
   </style>
   <link rel="icon" type="image/png" href="static/logo/favicon.ico">
@@ -17,81 +108,132 @@
 <body>
   <div class="container">
 
-    <div class="user-data">
-      <div class="username">
-        <h1 class="break"><a href="about.html">Nodaa Gaji</a></h1>
-      </div>
-      <div class="random-quote"><i>One flew east, One flew west, One flew Over the Cuckoo's Nest</i></div>
-      <div class="main-profile"><a href="https://sh1chan.herokuapp.com">#ames0k0 @ sh1chan</a></div>
-      <div class="profiles-link">
-        <a href="https://pypi.org/user/ames0k0">PyPI</a>
-        ::
-        <a href="https://www.youtube.com/@ames0k0">YouTube</a>
-      </div>
-      <div class="projects-link">
-        <a target="_blank" href="http://sh1chan.herokuapp.com">sh1chan</a>
-      </div>
-    </div>
-
-    <div class="routes break">
-      <a href="projects.html">Projects</a>
+    <h1><a href="about.html">YóUnǎi | ames0k0 | Nodirjon Gaziev</a></h1>
+    <p class="subtitle"><i>Software / Backend Developer (Python)</i></p>
+    <p class="social">
+      <a target="_blank" href="https://github.com/ames0k0/">GitHub</a>
       ::
-      <a href="scripts.html">Scripts</a>
+      <a target="_blank" href="https://www.youtube.com/@ames0k0">YouTube</a>
       ::
-      <a href="random.html">Random</a>
-    </div>
+      <a target="_blank" href="https://www.linkedin.com/in/ames0k0/">Resume</a>
+      ::
+      <a target="_blank" href="https://www.linkedin.com/in/ames0k0/">LinkedIn</a>
+      ::
+      <a target="_blank" href="https://t.me/ames0k0">Telegram</a>
+    </p>
 
-    <div class="break selectable-route">
-      <label for="selectClient">CLIENT</label>
-      <select name="selectClient">
-        <option value="clientAny">ANY</option>
-      </select>
-      <label for="selectAPIGateway">API GATEWAY</label>
-      <select name="selectAPIGateway">
-        <option value="apigatewayAny">ANY</option>
-      </select>
-      <label for="selectServer">SERVER</label>
-      <select name="selectServer">
-        <option value="serverAny">ANY</option>
-        <option value="serverWeb">WEB</option>
-        <option value="serverRest">REST</option>
-        <option value="serverGRPCc">gRPC</option>
+    <div class="filters">
+      <select id="client-filter">
+        <option value="ANY">Filter Posts</option>
+        <option value="PostProject">-Projects</option>
+        <option value="PostScript">-Scripts</option>
+        <option value="PostRandom">-Random</option>
       </select>
     </div>
 
-    <div class="page-updates break text-left">
-      <p class="page-status no-margin">
-        <a href="random__5.html"><strong>2023-06-11</strong></a>
-        Test code in the production
-      </p>
-      <p class="page-status no-margin">
-        <a href="random__4.html"><strong>2023-05-06</strong></a>
-        BotNet ? (MumbleHard)
-      </p>
-      <p class="page-status no-margin">
-        <a href="random__2.html"><strong>2022-07-20</strong></a>
-        Python Quiz: Logical operators with common objects
-      </p>
-      <p class="page-status no-margin">
-        <a href="random__1.html"><strong>2022-06-05</strong></a>
-        Python Quiz: XOR operator
-      </p>
-      <p class="page-status no-margin">
-        <a href="random__3.html"><strong>2021-10-03</strong></a>
-        Raspberry Pi 4: Booting an Operating System
-      </p>
-    </div>
+    <div class="tag-cloud" id="tag-cloud"></div>
 
-    <div class="page-posts-tags break">
-      <span>#Linux</span>
-      <span>#Networking</span>
-      <span>#Virtualization</span>
-      <span>#Cloud Computing</span>
-      <span>#Internet of Things</span>
-      <span>#Artificial Intelligence</span>
-    </div>
+    <ul class="writeups" id="writeups">
+
+      <li class="writeup" data-tags="Python, TelegramBot">
+        <strong class="writeup-date">2023-06-11</strong>
+        <strong><a href="random__5.html">Read</a></strong>
+        <p class="writeup-title">Test code in production</p>
+        <div class="tags">#Python #TelegramBot</div>
+      </li>
+
+      <li class="writeup" data-tags="Linux, BotNet, MumbleHard">
+        <strong class="writeup-date">2023-05-06</strong>
+        <strong><a href="random__4.html">Read</a></strong>
+        <p class="writeup-title">BotNet [MumbleHard] detection and cleanup</p>
+        <div class="tags">#Linux #BotNet #MumbleHard</div>
+      </li>
+
+      <li class="writeup" data-tags="Python">
+        <strong class="writeup-date">2022-07-20</strong>
+        <strong><a href="random__2.html">Read</a></strong>
+        <p class="writeup-title">Python Quiz: Logical operators with common objects</p>
+        <div class="tags">#Python</div>
+      </li>
+
+      <li class="writeup" data-tags="Python">
+        <strong class="writeup-date">2022-06-05</strong>
+        <strong><a href="random__1.html">Read</a></strong>
+        <p class="writeup-title">Python Quiz: XOR operator</p>
+        <div class="tags">#Python</div>
+      </li>
+
+      <li class="writeup" data-tags="Linux, RaspberryPi">
+        <strong class="writeup-date">2021-10-03</strong>
+        <strong><a href="random__3.html">Read</a></strong>
+        <p class="writeup-title">Raspberry Pi 4: Booting an Operating System</p>
+        <div class="tags">#Linux #RaspberryPi</div>
+      </li>
+
+    </ul>
 
   </div>
+
+  <script>
+    // DOM elements
+    const clientFilter = document.getElementById('client-filter');
+
+    const writeups = document.querySelectorAll('.writeup');
+    const tagCloud = document.getElementById('tag-cloud');
+
+    // Collect all unique tags from write-ups
+    const allTags = new Set();
+    writeups.forEach(item => {
+      const tags = item.getAttribute('data-tags').split(',').map(t => t.trim());
+      tags.forEach(tag => allTags.add(tag));
+    });
+
+    // Create tag buttons
+    allTags.forEach(tag => {
+      const btn = document.createElement('button');
+      btn.textContent = tag;
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('selected');
+        filterWriteups(); // Re-filter on every click
+      });
+      tagCloud.appendChild(btn);
+    });
+
+    // Main filter function
+    function filterWriteups() {
+      // Get selected values from dropdowns
+      const clientValue = clientFilter.value;
+
+      // Get all selected tags from tag cloud
+      const selectedTagButtons = tagCloud.querySelectorAll('button.selected');
+      const selectedTags = Array.from(selectedTagButtons).map(btn => btn.textContent);
+
+      writeups.forEach(writeup => {
+        const tags = writeup.getAttribute('data-tags').split(',').map(t => t.trim());
+
+        // Check dropdown filters
+        const hasClient = clientValue === 'ANY' || tags.includes(clientValue);
+
+        // Check if write-up matches ALL selected tags
+        const matchesAllSelectedTags = selectedTags.length === 0 ||
+          selectedTags.every(tag => tags.includes(tag));
+
+        // Show only if it passes both dropdown AND tag filters
+        if (hasClient && matchesAllSelectedTags) {
+          writeup.style.display = '';
+        } else {
+          writeup.style.display = 'none';
+        }
+      });
+    }
+
+    // Attach event listeners to dropdowns
+    clientFilter.addEventListener('change', filterWriteups);
+    apiGatewayFilter.addEventListener('change', filterWriteups);
+
+    // Initial load
+    filterWriteups();
+  </script>
 </body>
 
 </html>
