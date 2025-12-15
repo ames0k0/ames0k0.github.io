@@ -22,6 +22,22 @@ allTags.forEach(tag => {
 	tagCloud.appendChild(btn);
 });
 
+/**
+ * Hides hidden writeups tags
+ *
+ * @param {Set[str]} activeTags
+ */
+function hideTags(activeTags) {
+	const tagButtons = tagCloud.querySelectorAll('button');
+	tagButtons.forEach(tag => {
+		if (!activeTags || activeTags.has(tag.innerText)) {
+			tag.style.display = '';
+		} else {
+			tag.style.display = 'none';
+		}
+	});
+}
+
 // Main filter function
 function filterWriteups() {
 	// Get selected values from dropdowns
@@ -30,6 +46,7 @@ function filterWriteups() {
 	// Get all selected tags from tag cloud
 	const selectedTagButtons = tagCloud.querySelectorAll('button.selected');
 	const selectedTags = Array.from(selectedTagButtons).map(btn => btn.textContent);
+	const writeupTags = new Set();
 
 	writeups.forEach(writeup => {
 		const tags = writeup.getAttribute('data-tags').split(',').map(t => t.trim());
@@ -44,10 +61,13 @@ function filterWriteups() {
 		// Show only if it passes both dropdown AND tag filters
 		if (hasClient && matchesAllSelectedTags) {
 			writeup.style.display = '';
+			tags.forEach(tag => writeupTags.add(tag));
 		} else {
 			writeup.style.display = 'none';
 		}
 	});
+
+	hideTags(writeupTags);
 }
 
 // Attach event listeners to dropdowns
