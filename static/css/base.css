@@ -1,13 +1,5 @@
-body {
-  font-family: monospace;
-}
-
 .break {
   margin-top: 10px;
-}
-
-.container {
-  text-align: center;
 }
 
 .text-left {
@@ -17,4 +9,118 @@ body {
 
 .no-margin {
   margin: 0px;
+}
+
+body {
+	background-color: #000;
+	color: #00ffcc;
+	font-family: 'Courier New', monospace;
+	margin: 0;
+	padding: 20px;
+	line-height: 1.5;
+}
+
+.container {
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+}
+
+.ucontainer {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	color: #00ffcc;
+	margin: 0px;
+}
+
+.subtitle {
+	text-align: center;
+	margin: 0px;
+}
+
+.social {
+	text-align: center;
+	margin: 10px;
+}
+
+.social a {
+	color: #00ffcc;
+	text-decoration: underline;
+}
+
+a {
+	color: #00ffcc;
+	margin: 0 10px;
+	text-decoration: none;
+}
+
+.filters {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-bottom: 0px;
+	flex-wrap: wrap;
+}
+
+select {
+	background: #111;
+	color: #00ffcc;
+	border: 1px solid #444;
+	padding: 5px;
+	font-family: 'Courier New', monospace;
+}
+
+.tag-cloud {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	margin: 15px 0;
+}
+
+.tag-cloud button {
+	background: #111;
+	color: #66ccff;
+	border: 1px solid #444;
+	padding: 5px 10px;
+	font-family: 'Courier New', monospace;
+	cursor: pointer;
+}
+
+.tag-cloud button.selected {
+	background: #003333;
+	color: #00ffcc;
+	border-color: #00ffcc;
+	font-weight: bold;
+}
+
+.writeups {
+	list-style: none;
+	padding: 0;
+}
+
+.writeup {
+	margin-bottom: 10px;
+	padding: 10px;
+	background: #0a0a0a;
+	border-left: 3px solid #00ffcc;
+}
+
+.writeup-date {
+	color: #66ccff;
+	font-weight: bold;
+}
+
+.writeup-title {
+	margin: 0;
+	color: #00ffcc;
+}
+
+.tags {
+	margin-top: 5px;
+	font-size: 0.9em;
+	color: #66ccff;
 }
