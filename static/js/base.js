@@ -52,7 +52,8 @@ function filterWriteups() {
 		const tags = writeup.getAttribute('data-tags').split(',').map(t => t.trim());
 
 		// Check dropdown filters
-		const hasClient = clientValue === 'ANY' || tags.includes(clientValue);
+		const hasClient = clientValue === 'ANY' ||
+			clientValue === writeup.getAttribute('data-filter');
 
 		// Check if write-up matches ALL selected tags
 		const matchesAllSelectedTags = selectedTags.length === 0 ||
@@ -72,7 +73,6 @@ function filterWriteups() {
 
 // Attach event listeners to dropdowns
 clientFilter.addEventListener('change', filterWriteups);
-apiGatewayFilter.addEventListener('change', filterWriteups);
 
 // Initial load
 filterWriteups();
